@@ -102,8 +102,83 @@ public class NivelDos {
 
 	public void problema8(){
 		limpiarPantalla();
+		int num1 = 0, num2 = 0;
 		System.out.println("[Problema 8 - Nivel 2]");
+		System.out.println("Numeros a letras. Intervalo [0-100]");
+		System.out.println("Al ingresar 2 numeros se generara un número aleatorio");
+		System.out.println("en el rango y se interpretara en letras.");
+		
+		do{
+	    System.out.println("Ingrese el Primer número: [lim inferior][0-100]");
+	    num1 = scanDos.nextInt();
+		}while(num1<0 || num1>100);
+		
+		do{	
+	    System.out.println("Ingrese el segundo número: [lim superior][0-100]");
+	    num2 = scanDos.nextInt();
+		}while(num2<num1 || num2>100);
+		
+	    int valorEntero = (int) Math.floor(Math.random()*(num2-num1)+num1);
+	    
+	    String [] unidades =  {"", "UNO ", "DOS ", "TRES ", "CUATRO ", "CINCO ", 
+				"SEIS ", "SIETE ", "OCHO ", "NUEVE ", "DIEZ ",
+				"ONCE", "DOCE", "TRECE", "CATORCE", "QUINCE", "DIECISIEIS",
+				"DIECISIETE", "DIECIOCHO", "DIECINUEVE" , "VEINTE", "VEINTIUNO"};
+	
+		String [] decenas = {"","","VEINTI", "TREINTA", "CUARENTA", "CINCUENTA", "SESENTA",
+					"SETENTA", "OCHENTA", "NOVENTA"};
+		
+		String [] uni2 = {"", " Y UNO", " Y DOS", " Y TRES", " Y CUATRO", " Y CINCO",
+				" Y SEIS", " Y SIETE", " Y OCHO", " Y NUEVE"};
 
+		if(valorEntero<21){
+			for (int i = 0; i < 22; i++) {
+				if(valorEntero == i){
+					limpiarPantalla();
+					System.out.println("Liminte Inferior = " + num1);
+					System.out.println("Valor Aleaotorio = " + valorEntero);
+					System.out.println("Liminte Superior = " + num2);
+					System.out.println("Aleatorio expresando en letras = " + unidades[i]);
+					break;
+				}
+			}
+		}else{
+			String ltr = String.valueOf(valorEntero);
+			String dec1 = String.valueOf(ltr.charAt(0));
+			String uni1 = String.valueOf(ltr.charAt(1));
+			int dec = Integer.parseInt(dec1);
+			int uni = Integer.parseInt(uni1);
+			String resultado ="";
+			
+			for (int i = 1; i < 10; i++) {
+				if(dec==i){
+					resultado = decenas[i];
+					break;
+				}
+			}
+			
+			for (int i = 1; i < 10; i++) {
+				
+				if(dec>2){
+					if(uni==i){
+						resultado+=uni2[i];
+						break;
+					}
+				}else{
+					if(uni==i){
+						resultado+=unidades[i];
+						break;
+					}
+				}
+			}
+			limpiarPantalla();
+			System.out.println("Liminte Inferior = " + num1);
+			System.out.println("Valor Aleaotorio = " + valorEntero);
+			System.out.println("Liminte Superior = " + num2);
+			System.out.println("Aleatorio expresando en letras = " + resultado);
+		}
+		
+	    pausa();
 	}
 
 	public void problema9(){
