@@ -51,7 +51,7 @@ public class Principal {
 		System.out.println("********** APLICACIONES NIVEL 1 **********\n");
 		System.out.printf("%8s%13s%15s", "Opción","Actividad", "Detalles\n");
 		System.out.printf("%5s%17s%29s","1", "Problema 1","Figura Rombo Asteriscos\n");
-		System.out.printf("%5s%17s%26s","2", "Problema 2","Notas del estuciante\n");
+		System.out.printf("%5s%17s%26s","2", "Problema 2","Notas del estudiante\n");
 		System.out.printf("%5s%17s%18s","3", "Problema 3","Validar Hora\n");
 		System.out.printf("%5s%17s%25s","4", "Problema 4","Figuras geometricas\n");
 		System.out.printf("%5s%17s%23s","5", "Problema 5","Dias entre fechas\n");

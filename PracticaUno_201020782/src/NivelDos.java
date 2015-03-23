@@ -1,5 +1,4 @@
 import java.io.IOException;
-import java.text.DecimalFormat;
 import java.util.Scanner;
 
 
@@ -182,10 +181,35 @@ public class NivelDos {
 	}
 
 	public void problema9(){
+		
 		limpiarPantalla();
+		int numero = 0, copNum=0;
+		String cadena="";
 		System.out.println("[Problema 9 - Nivel 2]");
-
-	}
+		System.out.println("Convertir números arabigos a números romanos.");
+		System.out.println("Ingrese un número: [1-3999]");
+		numero = scanDos.nextInt();
+		copNum = numero;
+		String []letra={"I","IV","V","IX","X","XL","L","XC","C","CD","D","CM","M"};
+			while(numero>=1000){numero-=1000;cadena+=letra[12];}
+			while(numero>=900){numero-=900;cadena+=letra[11];}
+			while(numero>=500){numero-=500;cadena+=letra[10];}
+			while(numero>=400){numero-=400;cadena+=letra[9];}
+			while(numero>=100){numero-=100;cadena+=letra[8];}
+			while(numero>=90){numero-=90;cadena+=letra[7];}
+			while(numero>=50){numero-=50;cadena+=letra[6];}
+			while(numero>=40){numero-=40;cadena+=letra[5];}
+			while(numero>=10){numero-=10;cadena+=letra[4];}
+			while(numero>=9){numero-=9;cadena+=letra[3];}
+			while(numero>=5){numero-=5;cadena+=letra[2];}
+			while(numero>=4){numero-=4;cadena+=letra[1];}
+			while(numero>=1){numero-=1;cadena+=letra[0];} 
+		System.out.println("EL numero arabigo es: "+ copNum);
+		System.out.println("EL numero romano es: "+ cadena);
+		
+		pausa();
+}
+		
 	public void problema10(){
 		limpiarPantalla();
 		int num1 = 0, num2=1 ,espacios=0;
@@ -213,9 +237,60 @@ public class NivelDos {
 
 	public void problema11(){
 		limpiarPantalla();
+		String valor="";
+		String cadena="";
 		System.out.println("[Problema 11 - Nivel 2]");
-
+		System.out.println("Ingresar una lista de numeros romanos y mostrar");
+		System.out.println("en pantalla el numero menor y mayor en letras.\n");
+		do{
+		System.out.println("Ingrese un numero romano:\n[Letras permitidas: 'I', 'V', 'X', 'L', 'C', 'D' y 'M]");
+		valor = scanDos.nextLine();
+		valor = valor.toUpperCase();
+			if(!validarLetras(valor)){
+				limpiarPantalla();
+			}
+		}while(!validarLetras(valor));
+		
+		System.out.println(formarRomano(valor));
+		
+		
+		
+		pausa();
 	}
+	
+	public int formarRomano(String cadena){
+		int sumando=0;
+		for (int i = 0; i < cadena.length(); i++) {
+			while(cadena.charAt(i)=='I'){
+				sumando++;
+				break;
+			}
+		}
+		
+		return sumando;
+	}
+	
+	public boolean validarLetras(String cadena){
+		cadena = cadena.toUpperCase();
+		int contador=0;
+		char []valoresPermitidos = {'I', 'V', 'X', 'L', 'C', 'D', 'M'};
+		
+		for (int i = 0; i < cadena.length(); i++) {
+			for (int j = 0; j < valoresPermitidos.length; j++) {
+				if(cadena.charAt(i) == valoresPermitidos[j]){
+					contador++;
+				}
+			}
+		}
+		
+		if((contador) == cadena.length()){
+			return true;
+		}else{
+			return false;
+		}
+		
+	}
+	
 	public void problema12(){
 		limpiarPantalla();
 		String cadena= "", linea = "";
@@ -321,9 +396,31 @@ public class NivelDos {
 
 	public void problema15(){
 		limpiarPantalla();
-		DecimalFormat dcmls = new DecimalFormat("#.##");
-		double num = 0, contador =0, conta2=0;
+		
+		int num = 0, contador =0, conta2=0;
+		System.out.println("[Problema 15 - Nivel 2]");
+		System.out.println("Ingresar un número y el programa contara los numeros primos");
+		System.out.println("en el rango de 1 hasta el número que ingrese");
+		System.out.println("\nIngrese un número:");
+		num = scanDos.nextInt();
+		for(int i=2;i<=num;i++){
+			if(validarNumPrimo(i)){
+				contador+=1;
+				//System.out.print(i+", ");
+			}
+			
+		}
+		System.out.println("En el rango de 1 hasta " + num);
+		System.out.println("Hay "+contador+" numeros primos");
+		
 		pausa();
 	}
 	
+	public boolean validarNumPrimo(int numero){
+		for(int i=2;i<numero;i++)
+			if(numero%i==0)
+				return false;
+		return true;
+	}
+
 }
