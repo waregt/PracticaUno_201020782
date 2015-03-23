@@ -70,9 +70,11 @@ public class Principal {
 			case 3: limpiarPantalla();
 					nUno.problemaNumero3();
 				break;
-			case 4: System.out.println("problema2");
+			case 4: limpiarPantalla();
+					nUno.problemaNumero4();
 				break;
-			case 5: System.out.println("problema2");
+			case 5: limpiarPantalla();
+					nUno.problemaNumero5();
 				break;
 			default:
 				System.out.println("*Ayuda: Solo se pueden ingresar los valores en el rango de 0 y 5.");
