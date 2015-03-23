@@ -5,8 +5,9 @@ public class Principal {
 
 	public Scanner scan = new Scanner(System.in);
 	private NivelUno nUno = new NivelUno();
-	private int opcApp1 = 0; 
-	private int opcUno = 0;
+	private NivelDos nDos = new NivelDos();
+	private int opcApp1 = 0, opcApp2 = 0; 
+	private int opcUno = 0, opcDos = 0;
 	
 	public static void main(String[] args) {
 		Principal pl = new Principal();
@@ -86,6 +87,18 @@ public class Principal {
 	public void menuAppDos(){
 		limpiarPantalla();
 		System.out.println("********** APLICACIONES NIVEL 2 **********");
+		System.out.printf("%8s%13s%15s", "Opción","Actividad", "Detalles\n");
+		System.out.printf("%5s%17s%29s","6", "Problema 6","Figura Rombo Asteriscos\n");
+		System.out.printf("%5s%17s%26s","7", "Problema 7","Notas del estuciante\n");
+		System.out.printf("%5s%17s%18s","8", "Problema 8","Validar Hora\n");
+		System.out.printf("%5s%17s%25s","9", "Problema 9","Figuras geometricas\n");
+		System.out.printf("%6s%17s%23s","10", "Problema 10","Dias entre fechas\n");
+		System.out.printf("%6s%17s%26s","11", "Problema 11","Regruesar Anterior\n");
+		System.out.printf("%6s%17s%26s","12", "Problema 12","Notas del estuciante\n");
+		System.out.printf("%6s%17s%18s","13", "Problema 13","Validar Hora\n");
+		System.out.printf("%6s%17s%25s","14", "Problema 14","Figuras geometricas\n");
+		System.out.printf("%6s%17s%23s","15", "Problema 15","Dias entre fechas\n");
+		System.out.printf("%5s%15s%26s","0", "Reguesar","Regruesar Anterior\n");
 	}
 	
 	public void limpiarPantalla(){

@@ -81,11 +81,13 @@ public class NivelUno {
 		return Integer.parseInt(dato);
 	}
 	
+	
 	public void limpiarVentana(){
 		for (int i = 0; i < 40; i++) {
 			System.out.println("");
 		}
 	}
+	
 	
 	public void problemaNumero1(){
 		System.out.println("[Nivel 1 - Problema 1]");
@@ -106,6 +108,7 @@ public class NivelUno {
 
 	}
 
+	
 	public void problemaNumero2(){
 		int sumaPro2 = 0, totalPro2=0;
 		float resultadopro2 = 0;
@@ -149,6 +152,7 @@ public class NivelUno {
 		pausar();
 	}
 
+	
 	public void problemaNumero3(){
 		String cadena = "";
 		String limite = ":";
@@ -198,6 +202,7 @@ public class NivelUno {
 		
 		pausar();
 	}
+	
 	
 	public void problemaNumero4(){
 		DecimalFormat dcmls = new DecimalFormat("#.##");
@@ -355,7 +360,5 @@ public class NivelUno {
 		}
 		pausar();
 	}
-	
-
-	
+		
 }
